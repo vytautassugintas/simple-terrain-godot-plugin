@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://cx6i48vd2q76y"]
+
+[ext_resource type="Script" path="res://addons/simple_terrain/ui/terrain_slope_dialog.gd" id="1_slope_script"]
+
+[node name="TerrainSlopeDialog" type="ConfirmationDialog"]
+title = "Automatic Slope Coloring"
+position = Vector2i(100, 100)
+size = Vector2i(420, 480)
+ok_button_text = "Apply to Terrain"
+dialog_hide_on_ok = false
+script = ExtResource("1_slope_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 412.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CliffTypeLabel" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+text = "Cliff Appearance"
+
+[node name="ModeHBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="ModeTextureBtn" type="Button" parent="Margin/VBox/ModeHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "Cliff Texture"
+
+[node name="ModeColorBtn" type="Button" parent="Margin/VBox/ModeHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Cliff Color"
+
+[node name="TextureOptionsBox" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TexturePreviewRect" type="TextureRect" parent="Margin/VBox/TextureOptionsBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureInfoVBox" type="VBoxContainer" parent="Margin/VBox/TextureOptionsBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PatternNameLabel" type="Label" parent="Margin/VBox/TextureOptionsBox/TextureInfoVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rock Cliff"
+
+[node name="ChoosePatternBtn" type="MenuButton" parent="Margin/VBox/TextureOptionsBox/TextureInfoVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Select Pattern..."
+flat = false
+
+[node name="TilingBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="TilingLabel" type="Label" parent="Margin/VBox/TilingBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Texture Tiling Scale:"
+
+[node name="TilingSpinBox" type="SpinBox" parent="Margin/VBox/TilingBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.1
+max_value = 64.0
+step = 0.1
+value = 4.0
+
+[node name="ColorOptionsBox" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="CliffColorPicker" type="ColorPickerButton" parent="Margin/VBox/ColorOptionsBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="PresetGrayBtn" type="Button" parent="Margin/VBox/ColorOptionsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gray"
+
+[node name="PresetSlateBtn" type="Button" parent="Margin/VBox/ColorOptionsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Slate"
+
+[node name="PresetSandstoneBtn" type="Button" parent="Margin/VBox/ColorOptionsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sand"
+
+[node name="PresetRedBtn" type="Button" parent="Margin/VBox/ColorOptionsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Red"
+
+[node name="PresetSnowBtn" type="Button" parent="Margin/VBox/ColorOptionsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Snow"
+
+[node name="HSeparator1" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="ThresholdBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="ThresholdLabel" type="Label" parent="Margin/VBox/ThresholdBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Slope Angle Threshold (°):"
+
+[node name="ThresholdSpinBox" type="SpinBox" parent="Margin/VBox/ThresholdBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 5.0
+max_value = 85.0
+step = 1.0
+value = 35.0
+
+[node name="BlendBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="BlendLabel" type="Label" parent="Margin/VBox/BlendBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Slope Blend Range (°):"
+
+[node name="BlendSpinBox" type="SpinBox" parent="Margin/VBox/BlendBox"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+max_value = 45.0
+step = 1.0
+value = 10.0
+
+[node name="HSeparator2" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="KeepFlatCheck" type="CheckBox" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Keep Existing Ground Texture / Paint"
+
+[node name="GroundColorBox" type="HBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="GroundColorLabel" type="Label" parent="Margin/VBox/GroundColorBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ground Fill Color:"
+
+[node name="GroundColorPicker" type="ColorPickerButton" parent="Margin/VBox/GroundColorBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+color = Color(0.28, 0.52, 0.22, 1)
+
+[node name="HSeparator3" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="AutoSculptCheck" type="CheckBox" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Live Auto-Color Slopes while Sculpting"
+
+[node name="CliffFileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open an Image File"
+file_mode = 0
+filters = PackedStringArray("*.png, *.jpg, *.jpeg, *.webp ; Image Files")

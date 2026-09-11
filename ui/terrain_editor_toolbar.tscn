@@ -1,0 +1,1699 @@
+[gd_scene format=3 uid="uid://dmv7sve6i5b1k"]
+
+[ext_resource type="Script" uid="uid://cj6lbuhvhtmn1" path="res://addons/simple_terrain/ui/terrain_editor_toolbar.gd" id="1_toolbar"]
+[ext_resource type="Texture2D" uid="uid://b5pmr5t8u4g1p" path="res://addons/simple_terrain/icons/terrain_menu.svg" id="2_0dyho"]
+[ext_resource type="Texture2D" uid="uid://cdmcfxgorv8kf" path="res://addons/simple_terrain/icons/new_terrain.svg" id="3_lsojj"]
+[ext_resource type="PackedScene" uid="uid://dvf2icgqtilao" path="res://addons/simple_terrain/ui/terrain_noise_dialog.tscn" id="3_noise_dlg"]
+[ext_resource type="Texture2D" uid="uid://baok146lmwqvg" path="res://addons/simple_terrain/icons/noise_gen.svg" id="4_opg6i"]
+[ext_resource type="PackedScene" uid="uid://cx6i48vd2q76y" path="res://addons/simple_terrain/ui/terrain_slope_dialog.tscn" id="4_slope_dlg"]
+[ext_resource type="Texture2D" uid="uid://upvkf2wnpker" path="res://addons/simple_terrain/icons/sculpt_flatten.svg" id="5_hqbp2"]
+[ext_resource type="Texture2D" uid="uid://dumurty6duuu7" path="res://addons/simple_terrain/icons/eraser.svg" id="6_r01hq"]
+[ext_resource type="Texture2D" uid="uid://cpoy50s38fhhc" path="res://addons/simple_terrain/icons/slope_color.svg" id="7_v77lt"]
+[ext_resource type="Texture2D" uid="uid://b81c1naodyq07" path="res://addons/simple_terrain/icons/foliage_library.svg" id="8_yxmc7"]
+[ext_resource type="Texture2D" uid="uid://bwmrbmbi1r24t" path="res://addons/simple_terrain/icons/mode_view.svg" id="9_hp6nk"]
+[ext_resource type="Texture2D" uid="uid://d7v2irrtsp2x" path="res://addons/simple_terrain/icons/mode_sculpt.svg" id="10_4dmqi"]
+[ext_resource type="Texture2D" uid="uid://dyhk1pvw3but" path="res://addons/simple_terrain/icons/mode_paint.svg" id="11_6f2jo"]
+[ext_resource type="Texture2D" uid="uid://cpwn78y8jvbrl" path="res://addons/simple_terrain/icons/mode_foliage.svg" id="12_x27ux"]
+[ext_resource type="Texture2D" uid="uid://daf8uvk2f6nrm" path="res://addons/simple_terrain/icons/wireframe.svg" id="13_w36rd"]
+[ext_resource type="Texture2D" uid="uid://h43e2xgs6kml" path="res://addons/simple_terrain/icons/hud_info.svg" id="14_sojq2"]
+[ext_resource type="Texture2D" uid="uid://lyyj2kc4waac" path="res://addons/simple_terrain/icons/axis_lock.svg" id="15_383pi"]
+[ext_resource type="Texture2D" uid="uid://cnpcnvwii6o2n" path="res://addons/simple_terrain/icons/asset_palette.svg" id="16_xmxni"]
+[ext_resource type="Texture2D" uid="uid://dgcsva0bqpwkb" path="res://addons/simple_terrain/icons/save.svg" id="17_0hoyy"]
+[ext_resource type="Texture2D" uid="uid://c80vgrkcf3yc1" path="res://addons/simple_terrain/icons/save_data.svg" id="18_4x18v"]
+[ext_resource type="Texture2D" uid="uid://b1h0rv2x57y3t" path="res://addons/simple_terrain/icons/export_gltf.svg" id="19_qvxrs"]
+[ext_resource type="Texture2D" uid="uid://b1da3ev1ov3l1" path="res://addons/simple_terrain/icons/save_mesh.svg" id="20_xvrkr"]
+[ext_resource type="Texture2D" uid="uid://cjaag3yy6p1h8" path="res://addons/simple_terrain/icons/save_texture.svg" id="21_j3lv5"]
+[ext_resource type="Texture2D" uid="uid://d3hnr0t7sct60" path="res://addons/simple_terrain/icons/help.svg" id="22_d535i"]
+[ext_resource type="Texture2D" uid="uid://bidmvrkbmam7h" path="res://addons/simple_terrain/icons/sculpt_raise.svg" id="23_mw3pb"]
+[ext_resource type="Texture2D" uid="uid://ck4qndbi4xqb1" path="res://addons/simple_terrain/icons/sculpt_lower.svg" id="24_d34ju"]
+[ext_resource type="Texture2D" uid="uid://cssc2uf1vxrhn" path="res://addons/simple_terrain/icons/sculpt_smooth.svg" id="25_shbes"]
+[ext_resource type="Texture2D" uid="uid://4cm41i5w4hy6" path="res://addons/simple_terrain/icons/sculpt_noise.svg" id="26_dun4b"]
+[ext_resource type="Texture2D" uid="uid://c8aprp50mw2md" path="res://addons/simple_terrain/icons/sculpt_terrace.svg" id="27_6o33u"]
+[ext_resource type="Texture2D" uid="uid://btewqmx5746n5" path="res://addons/simple_terrain/icons/sculpt_ramp.svg" id="28_8eki0"]
+[ext_resource type="Texture2D" uid="uid://v0fy25qum3um" path="res://addons/simple_terrain/icons/eyedropper.svg" id="29_ex8kc"]
+[ext_resource type="Texture2D" uid="uid://q408hbuiw4w2" path="res://addons/simple_terrain/icons/sculpt_mask.svg" id="30_njsvn"]
+[ext_resource type="Texture2D" uid="uid://vxfk4p3uao4s" path="res://addons/simple_terrain/icons/brush_jitter.svg" id="31_kn4l6"]
+[ext_resource type="Texture2D" uid="uid://ch4sno7dt8oey" path="res://addons/simple_terrain/icons/foliage_paint.svg" id="32_bxrcp"]
+[ext_resource type="Texture2D" uid="uid://bc644jh5uwk2o" path="res://addons/simple_terrain/icons/foliage_erase.svg" id="33_ww3ex"]
+[ext_resource type="Texture2D" uid="uid://cgoeet0vp1kwl" path="res://addons/simple_terrain/icons/foliage_select.svg" id="34_a7sja"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/close.svg" id="35_close"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/falloff_smooth.svg" id="36_falloff_smooth"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/falloff_linear.svg" id="37_falloff_linear"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/falloff_spherical.svg" id="38_falloff_spherical"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/falloff_flat.svg" id="39_falloff_flat"]
+[ext_resource type="PackedScene" uid="uid://cx6i48vd2q76z" path="res://addons/simple_terrain/ui/terrain_scrubber.tscn" id="40_scrubber"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/brush_shape.svg" id="41_brush_shape"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/slope_limit.svg" id="42_slope_limit"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/brush_circle.svg" id="43_brush_circle"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/brush_square.svg" id="44_brush_square"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/brush_patch.svg" id="45_brush_patch"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/brush_dots.svg" id="46_brush_dots"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/brush_cross.svg" id="47_brush_cross"]
+
+[node name="TerrainEditorToolbar" type="PanelContainer" unique_id=876558865]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+grow_horizontal = 2
+script = ExtResource("1_toolbar")
+
+[node name="ToolbarVBox" type="VBoxContainer" parent="." unique_id=1182651440]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MainBox" type="HBoxContainer" parent="ToolbarVBox" unique_id=599081815]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TerrainMenuBtn" type="MenuButton" parent="ToolbarVBox/MainBox" unique_id=1469837574]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Terrain Operations & Generation"
+text = "Terrain"
+icon = ExtResource("2_0dyho")
+flat = false
+item_count = 8
+popup/item_0/text = "Resize Terrain..."
+popup/item_0/icon = ExtResource("3_lsojj")
+popup/item_0/id = 0
+popup/item_1/text = "New Terrain..."
+popup/item_1/icon = ExtResource("3_lsojj")
+popup/item_1/id = 1
+popup/item_2/text = "Generate Procedural Noise..."
+popup/item_2/icon = ExtResource("4_opg6i")
+popup/item_2/id = 2
+popup/item_3/id = -1
+popup/item_3/separator = true
+popup/item_4/text = "Flatten All Heights to 0"
+popup/item_4/icon = ExtResource("5_hqbp2")
+popup/item_4/id = 3
+popup/item_5/text = "Clear Texture to Base Color"
+popup/item_5/icon = ExtResource("6_r01hq")
+popup/item_5/id = 4
+popup/item_6/text = "Auto Color Slopes..."
+popup/item_6/icon = ExtResource("7_v77lt")
+popup/item_6/id = 5
+popup/item_7/text = "Foliage & Prop Library..."
+popup/item_7/icon = ExtResource("8_yxmc7")
+popup/item_7/id = 6
+
+[node name="VSep1" type="VSeparator" parent="ToolbarVBox/MainBox" unique_id=1930052091]
+layout_mode = 2
+
+[node name="ViewBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=1975965061]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "View Mode (Alt+V): Navigate and inspect without modifying terrain"
+toggle_mode = true
+button_pressed = true
+text = "View"
+icon = ExtResource("9_hp6nk")
+
+[node name="SculptBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=2073488643]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Sculpt Mode (Alt+B): Elevate, lower, smooth, or flatten terrain geometry
+Shift+Drag: Invert sculpt | Ctrl+Drag: Smooth"
+toggle_mode = true
+text = "Sculpt"
+icon = ExtResource("10_4dmqi")
+
+[node name="PaintBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=1336857619]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Paint Mode (Alt+P): Paint colors or stamped textures onto terrain"
+toggle_mode = true
+text = "Paint"
+icon = ExtResource("11_6f2jo")
+
+[node name="FoliageBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=1253854029]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Foliage Mode (Alt+G): Scatter or erase MultiMesh vegetation, grass, and props"
+toggle_mode = true
+text = "Foliage"
+icon = ExtResource("12_x27ux")
+
+[node name="VSep2" type="VSeparator" parent="ToolbarVBox/MainBox" unique_id=219295750]
+layout_mode = 2
+
+[node name="WireframeBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=1006142504]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Toggle Terrain Wireframe (Alt+W)"
+toggle_mode = true
+icon = ExtResource("13_w36rd")
+
+[node name="HudBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=858836508]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Toggle Live Info HUD (Alt+H)"
+toggle_mode = true
+icon = ExtResource("14_sojq2")
+
+[node name="AxisLockBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=463379145]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Cycle Axis Lock Constraint (Alt+X / Alt+Z / Off) [Clear: Alt+C]"
+icon = ExtResource("15_383pi")
+
+[node name="AssetDockBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=1191303454]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Toggle Terrain Palette & Asset Dock (Foliage & Textures)"
+toggle_mode = true
+icon = ExtResource("16_xmxni")
+
+[node name="ExportMenuBtn" type="MenuButton" parent="ToolbarVBox/MainBox" unique_id=434966670]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Export and save options"
+text = "Save"
+icon = ExtResource("17_0hoyy")
+flat = false
+item_count = 4
+popup/item_0/text = "Save Terrain Data (*.res, *.tres)..."
+popup/item_0/icon = ExtResource("18_4x18v")
+popup/item_0/id = 0
+popup/item_1/text = "Export Terrain as glTF (*.glb, *.gltf)..."
+popup/item_1/icon = ExtResource("19_qvxrs")
+popup/item_1/id = 1
+popup/item_2/text = "Export Terrain Mesh (*.tres, *.res)..."
+popup/item_2/icon = ExtResource("20_xvrkr")
+popup/item_2/id = 2
+popup/item_3/text = "Export Terrain Texture (*.png)..."
+popup/item_3/icon = ExtResource("21_j3lv5")
+popup/item_3/id = 3
+
+[node name="SaveDataWarningBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=1323194744]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Terrain data is embedded in this scene file, causing large scene files and save warnings.
+Click here to save it to an external .res file."
+text = "Save Data (.res)"
+icon = ExtResource("18_4x18v")
+
+[node name="HelpBtn" type="Button" parent="ToolbarVBox/MainBox" unique_id=235863493]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Keyboard Shortcuts & Viewport Gestures"
+icon = ExtResource("22_d535i")
+
+[node name="RowSeparator" type="HSeparator" parent="ToolbarVBox" unique_id=13056527]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ToolOptionsRow" type="HBoxContainer" parent="ToolbarVBox" unique_id=497661233]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SculptContainer" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow" unique_id=575059694]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SculptSubmodesBox" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=650622985]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SculptRaiseBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=2067935189]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Raise (Alt+1): Elevate terrain vertices"
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("23_mw3pb")
+
+[node name="SculptLowerBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=965293685]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Lower (Alt+2): Depress terrain vertices [Hold Shift while sculpting]"
+toggle_mode = true
+icon = ExtResource("24_d34ju")
+
+[node name="SculptSmoothBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=465173012]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Smooth (Alt+3): Blend elevation differences [Hold Ctrl while sculpting]"
+toggle_mode = true
+icon = ExtResource("25_shbes")
+
+[node name="SculptFlattenBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=162607594]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Flatten (Alt+4): Level terrain to target elevation [Alt+Click to sample]"
+toggle_mode = true
+icon = ExtResource("5_hqbp2")
+
+[node name="SculptNoiseBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=368418872]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Noise / Detail (Alt+5): Perturb terrain geometry for natural rock faces"
+toggle_mode = true
+icon = ExtResource("26_dun4b")
+
+[node name="SculptTerraceBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=241750215]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Terrace / Step (Alt+6): Quantize elevations to discrete plateau intervals"
+toggle_mode = true
+icon = ExtResource("27_6o33u")
+
+[node name="SculptRampBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptSubmodesBox" unique_id=251345997]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Ramp / Gradient (Alt+7): Grade even slopes between two points"
+toggle_mode = true
+icon = ExtResource("28_8eki0")
+
+[node name="VSepSculpt" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=1022690481]
+layout_mode = 2
+
+[node name="SculptSizeScrubber" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=1269990938 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 38)
+layout_mode = 2
+tooltip_text = "Brush Radius [Alt+[ / Alt+]] (Click and drag to scrub, click to type)"
+prefix = "R: "
+suffix = "m"
+min_value = 0.5
+max_value = 150.0
+step = 0.5
+value = 5.0
+
+[node name="SculptStrengthScrubber" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=902541629 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 38)
+layout_mode = 2
+tooltip_text = "Brush Strength {Alt+Shift+[ / Alt+Shift+]} (Click and drag to scrub, click to type)"
+prefix = "Str: "
+min_value = 0.1
+max_value = 20.0
+step = 0.1
+value = 2.0
+
+[node name="SculptFalloffBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=951951971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Falloff Curve: Smooth (Cosine) [Click to cycle: Smooth, Linear, Dome, Flat]"
+icon = ExtResource("36_falloff_smooth")
+icon_alignment = 1
+
+[node name="FlattenBox" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=1548726904]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="VSepFlatten" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/FlattenBox" unique_id=1980223920]
+layout_mode = 2
+
+[node name="FlattenHeightScrubber" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/FlattenBox" unique_id=588841791 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 38)
+layout_mode = 2
+tooltip_text = "Target elevation for Flatten tool (Click and drag to scrub, click to type)"
+prefix = "Target: "
+suffix = "m"
+min_value = -500.0
+max_value = 500.0
+step = 0.2
+value = 0.0
+
+[node name="PickHeightBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/FlattenBox" unique_id=2135760072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Sample height from terrain surface (or Alt+Click in 3D viewport)"
+toggle_mode = true
+icon = ExtResource("29_ex8kc")
+
+[node name="TerraceBox" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=242257560]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="VSepTerrace" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/TerraceBox" unique_id=1624893067]
+layout_mode = 2
+
+[node name="TerraceStepScrubber" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/TerraceBox" unique_id=1996326751 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 38)
+layout_mode = 2
+tooltip_text = "Step interval height for Terrace tool (Click and drag to scrub, click to type)"
+prefix = "Step: "
+suffix = "m"
+min_value = 0.2
+max_value = 50.0
+step = 0.2
+value = 2.0
+
+[node name="VSepSculptPopovers" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=1949236612]
+layout_mode = 2
+
+
+[node name="SculptMaskBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=1413640346]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Alpha Stencil / Mask: Click to pick stencil mask pattern or adjust angle"
+icon = ExtResource("30_njsvn")
+
+[node name="SculptMaskRect" type="TextureRect" parent="ToolbarVBox/ToolOptionsRow/SculptContainer/SculptMaskBtn" unique_id=1620171446]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SculptDynamicsBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=234100756]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Stroke Dynamics (Spacing & Jitter)"
+icon = ExtResource("31_kn4l6")
+
+[node name="SculptAutoSlopeBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=1345752486]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Live Auto Slope Coloring (Toggle live cliff coloring while sculpting)"
+toggle_mode = true
+icon = ExtResource("7_v77lt")
+
+[node name="SculptSlopeLimitBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/SculptContainer" unique_id=778899039]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Slope Angle Limits (Constrain sculpt deformation to slope range, e.g. 0°-90°)"
+toggle_mode = true
+icon = ExtResource("42_slope_limit")
+
+[node name="PaintContainer" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow" unique_id=394314844]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PaintColorPicker" type="ColorPickerButton" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=2069755390]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Paint Color (Alt+1): Custom color for brush painting"
+color = Color(0.28, 0.5, 0.22, 1)
+edit_alpha = false
+
+[node name="EraserBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=1203513523]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Eraser: Revert paint back to base terrain color"
+toggle_mode = true
+icon = ExtResource("6_r01hq")
+
+[node name="PatternPreviewBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=1786805062]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Pattern Stamp (Alt+2): Click to select pattern or adjust tiling in Terrain Palette"
+toggle_mode = true
+
+[node name="PatternPreviewRect" type="TextureRect" parent="ToolbarVBox/ToolOptionsRow/PaintContainer/PatternPreviewBtn" unique_id=1274098527]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VSepPaint2" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=581938713]
+layout_mode = 2
+
+[node name="PaintSizeScrubber" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=752036601 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 38)
+layout_mode = 2
+tooltip_text = "Paint Brush Radius [Alt+[ / Alt+]] (Click and drag to scrub, click to type)"
+prefix = "R: "
+suffix = "m"
+min_value = 0.5
+max_value = 150.0
+step = 0.5
+value = 4.0
+
+[node name="PaintStrengthScrubber" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=808669689 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 38)
+layout_mode = 2
+tooltip_text = "Paint Brush Strength {Alt+Shift+[ / Alt+Shift+]} (Click and drag to scrub, click to type)"
+prefix = "Str: "
+min_value = 0.05
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="PaintFalloffBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=1296016341]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Falloff Curve: Smooth (Cosine) [Click to cycle: Smooth, Linear, Dome, Flat]"
+icon = ExtResource("36_falloff_smooth")
+icon_alignment = 1
+
+[node name="BrushShapeBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=778899030]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Brush Shape (Circle, Square, Patch, Dots, Cross, Custom) [Click to select]"
+icon = ExtResource("41_brush_shape")
+
+[node name="BrushShapeRect" type="TextureRect" parent="ToolbarVBox/ToolOptionsRow/PaintContainer/BrushShapeBtn" unique_id=778899031]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SlopeLimitBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=778899032]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Slope Angle Limits (Constrain painting to surface slope angles, e.g. flat ground or cliffs)"
+toggle_mode = true
+icon = ExtResource("42_slope_limit")
+
+[node name="VSepPaintPopovers" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=1432595767]
+layout_mode = 2
+
+[node name="PaintDynamicsBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=1260378060]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Stroke Dynamics (Spacing & Jitter)"
+icon = ExtResource("31_kn4l6")
+
+[node name="PaintAutoSlopeBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/PaintContainer" unique_id=1593402282]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Auto Color Slopes... (Configure and color cliffs based on terrain angle)"
+icon = ExtResource("7_v77lt")
+
+[node name="FoliageContainer" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow" unique_id=1326752802]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="FoliageSubmodesBox" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer" unique_id=519806779]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="FoliagePaintBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageSubmodesBox" unique_id=1981697841]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Scatter / Paint Foliage (Alt+1): Add instances inside brush radius"
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("32_bxrcp")
+
+[node name="FoliageEraseBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageSubmodesBox" unique_id=557161518]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Erase Foliage (Alt+2): Remove instances inside brush radius"
+toggle_mode = true
+icon = ExtResource("33_ww3ex")
+
+[node name="FoliageSelectBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageSubmodesBox" unique_id=1424172507]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+tooltip_text = "Select & Move Instance (Alt+3): Click scattered object to select, drag to reposition, or adjust transform"
+toggle_mode = true
+icon = ExtResource("34_a7sja")
+
+[node name="FoliageBrushBox" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer" unique_id=70554216]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="VSepFoliage1" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageBrushBox" unique_id=169576677]
+layout_mode = 2
+
+[node name="FoliageSizeScrubber" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageBrushBox" unique_id=2023503158 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 38)
+layout_mode = 2
+tooltip_text = "Brush Radius [Alt+[ / Alt+]] (Click and drag to scrub, click to type)"
+prefix = "R: "
+suffix = "m"
+min_value = 0.5
+max_value = 50.0
+step = 0.5
+value = 4.0
+
+[node name="FoliageInstanceBox" type="HBoxContainer" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer" unique_id=984733383]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="VSepInst" type="VSeparator" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=47722347]
+layout_mode = 2
+
+[node name="FoliageSelectedLabel" type="Label" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=169763375]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 11
+text = "Click object to select"
+
+[node name="FoliagePosXSpin" type="SpinBox" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=87116291]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Instance X position"
+min_value = -5000.0
+max_value = 5000.0
+step = 0.05
+prefix = "X:"
+
+[node name="FoliagePosYSpin" type="SpinBox" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=2010242801]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Instance Y elevation"
+min_value = -5000.0
+max_value = 5000.0
+step = 0.05
+prefix = "Y:"
+
+[node name="FoliagePosZSpin" type="SpinBox" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=341497301]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Instance Z position"
+min_value = -5000.0
+max_value = 5000.0
+step = 0.05
+prefix = "Z:"
+
+[node name="FoliageYawSpin" type="SpinBox" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=967457199]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 2
+tooltip_text = "Instance Yaw rotation [ / ] to rotate"
+min_value = -360.0
+max_value = 360.0
+prefix = "Y°:"
+
+[node name="FoliageScaleSpin" type="SpinBox" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=1615439518]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+tooltip_text = "Instance scale"
+min_value = 0.05
+max_value = 20.0
+step = 0.05
+value = 1.0
+prefix = "S:"
+
+[node name="FoliageAlignSurfaceBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=1031377417]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Align height and tilt to terrain surface"
+text = "Align Surface"
+
+[node name="FoliageDeleteInstBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=1913842274]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Delete selected instance (Delete / Backspace)"
+text = "Delete"
+
+[node name="FoliageDeselectBtn" type="Button" parent="ToolbarVBox/ToolOptionsRow/FoliageContainer/FoliageInstanceBox" unique_id=44520242]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 34)
+layout_mode = 2
+tooltip_text = "Deselect instance (Escape)"
+icon = ExtResource("35_close")
+icon_alignment = 1
+
+[node name="ContextSubBar" type="PanelContainer" parent="ToolbarVBox" unique_id=621114215]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ContextHBox" type="HBoxContainer" parent="ToolbarVBox/ContextSubBar" unique_id=459115642]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RampBox" type="HBoxContainer" parent="ToolbarVBox/ContextSubBar/ContextHBox" unique_id=1220020392]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="RampIconLabel" type="Label" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=400606066]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75, 0.25, 1)
+text = "Ramp Tool:"
+
+[node name="VSepRamp1" type="VSeparator" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=350035453]
+layout_mode = 2
+
+[node name="RampWidthScrubber" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=785496230 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 38)
+layout_mode = 2
+tooltip_text = "Ramp width in meters (Click and drag to scrub, click to type)"
+prefix = "W: "
+suffix = "m"
+min_value = 1.0
+max_value = 100.0
+step = 0.5
+value = 6.0
+
+[node name="RampFalloffScrubber" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=1151682122 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(105, 38)
+layout_mode = 2
+tooltip_text = "Ramp blend falloff (Click and drag to scrub, click to type)"
+prefix = "Fall: "
+suffix = "m"
+min_value = 0.0
+max_value = 50.0
+step = 0.5
+value = 2.0
+
+[node name="RampCrownScrubber" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=1491673156 instance=ExtResource("40_scrubber")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 38)
+layout_mode = 2
+tooltip_text = "Ramp crown arch (camber) in meters (Click and drag to scrub, click to type)"
+prefix = "Crown: "
+suffix = "m"
+min_value = -5.0
+max_value = 5.0
+step = 0.1
+value = 0.0
+
+[node name="VSepRamp2" type="VSeparator" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=1240174904]
+layout_mode = 2
+
+[node name="RampApplyBtn" type="Button" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=1426620186]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+tooltip_text = "Apply ramp between Point A and Point B (Shortcut: Alt+Enter)"
+text = "Apply Ramp [Alt+Enter]"
+
+[node name="RampClearBtn" type="Button" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=1330125658]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+tooltip_text = "Clear ramp endpoints (Shortcut: Esc)"
+text = "Clear [Esc]"
+
+[node name="VSepRamp3" type="VSeparator" parent="ToolbarVBox/ContextSubBar/ContextHBox/RampBox" unique_id=706376388]
+layout_mode = 2
+
+[node name="ResizeTerrainDialog" type="ConfirmationDialog" parent="." unique_id=337495577]
+
+unique_name_in_owner = true
+title = "Resize Terrain (Additive)"
+initial_position = 2
+size = Vector2i(420, 240)
+
+[node name="VBox" type="VBoxContainer" parent="ResizeTerrainDialog" unique_id=1706193548]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 412.0
+offset_bottom = 191.0
+theme_override_constants/separation = 8
+
+[node name="ResizeInfoLabel" type="Label" parent="ResizeTerrainDialog/VBox" unique_id=1836882679]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.85, 1, 1)
+text = "Additive resize preserves existing sculpt and paint data within bounds."
+autowrap_mode = 2
+
+[node name="Grid" type="GridContainer" parent="ResizeTerrainDialog/VBox" unique_id=1286699953]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="SizeXLabel" type="Label" parent="ResizeTerrainDialog/VBox/Grid" unique_id=913500301]
+layout_mode = 2
+text = "Width X (meters):"
+
+[node name="ResizeSizeXSpin" type="SpinBox" parent="ResizeTerrainDialog/VBox/Grid" unique_id=1081961517]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 4.0
+max_value = 4096.0
+value = 64.0
+
+[node name="SizeZLabel" type="Label" parent="ResizeTerrainDialog/VBox/Grid" unique_id=362651959]
+layout_mode = 2
+text = "Depth Z (meters):"
+
+[node name="ResizeSizeZSpin" type="SpinBox" parent="ResizeTerrainDialog/VBox/Grid" unique_id=503756585]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 4.0
+max_value = 4096.0
+value = 64.0
+
+[node name="ResXLabel" type="Label" parent="ResizeTerrainDialog/VBox/Grid" unique_id=497731596]
+layout_mode = 2
+text = "Resolution X (quads):"
+
+[node name="ResizeResXSpin" type="SpinBox" parent="ResizeTerrainDialog/VBox/Grid" unique_id=341877195]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 2.0
+max_value = 1024.0
+value = 64.0
+
+[node name="ResZLabel" type="Label" parent="ResizeTerrainDialog/VBox/Grid" unique_id=353737330]
+layout_mode = 2
+text = "Resolution Z (quads):"
+
+[node name="ResizeResZSpin" type="SpinBox" parent="ResizeTerrainDialog/VBox/Grid" unique_id=4660951]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 2.0
+max_value = 1024.0
+value = 64.0
+
+[node name="NewTerrainDialog" type="ConfirmationDialog" parent="." unique_id=1157080947]
+unique_name_in_owner = true
+title = "Create New Terrain (Clear All)"
+initial_position = 2
+size = Vector2i(380, 280)
+
+[node name="VBox" type="VBoxContainer" parent="NewTerrainDialog" unique_id=509154018]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 372.0
+offset_bottom = 231.0
+theme_override_constants/separation = 6
+
+[node name="Grid" type="GridContainer" parent="NewTerrainDialog/VBox" unique_id=240596339]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="SizeXLabel" type="Label" parent="NewTerrainDialog/VBox/Grid" unique_id=2030622199]
+layout_mode = 2
+text = "Width X (meters):"
+
+[node name="NewSizeXSpin" type="SpinBox" parent="NewTerrainDialog/VBox/Grid" unique_id=677009508]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 4.0
+max_value = 2048.0
+step = 4.0
+value = 64.0
+
+[node name="SizeZLabel" type="Label" parent="NewTerrainDialog/VBox/Grid" unique_id=769442052]
+layout_mode = 2
+text = "Depth Z (meters):"
+
+[node name="NewSizeZSpin" type="SpinBox" parent="NewTerrainDialog/VBox/Grid" unique_id=938356027]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 4.0
+max_value = 2048.0
+step = 4.0
+value = 64.0
+
+[node name="ResXLabel" type="Label" parent="NewTerrainDialog/VBox/Grid" unique_id=555252255]
+layout_mode = 2
+text = "Resolution X (quads):"
+
+[node name="NewResXSpin" type="SpinBox" parent="NewTerrainDialog/VBox/Grid" unique_id=1478604478]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 4.0
+max_value = 512.0
+step = 4.0
+value = 64.0
+
+[node name="ResZLabel" type="Label" parent="NewTerrainDialog/VBox/Grid" unique_id=1751348865]
+layout_mode = 2
+text = "Resolution Z (quads):"
+
+[node name="NewResZSpin" type="SpinBox" parent="NewTerrainDialog/VBox/Grid" unique_id=762486118]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 4.0
+max_value = 512.0
+step = 4.0
+value = 64.0
+
+[node name="TexSizeLabel" type="Label" parent="NewTerrainDialog/VBox/Grid" unique_id=1671805931]
+layout_mode = 2
+text = "Texture Size:"
+
+[node name="NewTexOption" type="OptionButton" parent="NewTerrainDialog/VBox/Grid" unique_id=634301959]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "512 x 512"
+popup/item_0/id = 512
+popup/item_1/text = "1024 x 1024"
+popup/item_1/id = 1024
+popup/item_2/text = "2048 x 2048"
+popup/item_2/id = 2048
+
+[node name="ColorLabel" type="Label" parent="NewTerrainDialog/VBox/Grid" unique_id=1445321645]
+layout_mode = 2
+text = "Base Color:"
+
+[node name="NewBaseColorPicker" type="ColorPickerButton" parent="NewTerrainDialog/VBox/Grid" unique_id=1523905755]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0.28, 0.5, 0.22, 1)
+edit_alpha = false
+
+[node name="NoiseDialog" parent="." unique_id=103983346 instance=ExtResource("3_noise_dlg")]
+unique_name_in_owner = true
+
+[node name="ShortcutsDialog" type="AcceptDialog" parent="." unique_id=206149354]
+unique_name_in_owner = true
+title = "SimpleTerrain Shortcuts & Controls"
+initial_position = 2
+size = Vector2i(580, 500)
+
+[node name="VBox" type="VBoxContainer" parent="ShortcutsDialog" unique_id=670980134]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 572.0
+offset_bottom = 451.0
+theme_override_constants/separation = 10
+
+[node name="Header1" type="Label" parent="ShortcutsDialog/VBox" unique_id=856771826]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Tool Mode Switching:"
+
+[node name="Label1" type="Label" parent="ShortcutsDialog/VBox" unique_id=1233510058]
+layout_mode = 2
+text = "  • Alt + V: Switch to View Mode (standard camera / inspect)
+  • Alt + B: Switch to Sculpt Mode (terrain geometry)
+  • Alt + P: Switch to Paint Mode (texture painting & stamping)
+  • Alt + G: Switch to Foliage Mode (scatter vegetation & props)
+  • Alt + Tab or Alt + ~: Viewport Radial / Pie Menu
+  • Alt + W: Toggle terrain wireframe overlay
+  • Alt + H: Toggle live info HUD
+  • Alt + 1-7 (Sculpt): Raise (1), Lower (2), Smooth (3), Flatten (4), Noise (5), Terrace (6), Ramp (7)
+  • Alt + 1-2 (Paint): Color (1), Pattern (2)
+  • Alt + 1-3 (Foliage): Paint (1), Erase (2), Select (3)"
+
+[node name="Header2" type="Label" parent="ShortcutsDialog/VBox" unique_id=1298967474]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Brush Sizing & Gestures in Viewport:"
+
+[node name="Label2" type="Label" parent="ShortcutsDialog/VBox" unique_id=1869859918]
+layout_mode = 2
+text = "  • Hold Alt + R + Drag Mouse: Interactively resize brush radius live under cursor
+  • Hold Alt + Shift + R + Drag Mouse: Interactively resize brush strength live
+  • Alt + Mouse Wheel: Smoothly resize brush radius in viewport
+  • Alt + Shift + Mouse Wheel: Adjust brush strength in viewport
+  • Alt + [ / ]: Decrease / Increase brush radius
+  • Alt + Shift + [ / ]: Decrease / Increase brush strength"
+
+[node name="Header3" type="Label" parent="ShortcutsDialog/VBox" unique_id=512106061]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Sculpting & Ramp Gestures in Viewport:"
+
+[node name="Label3" type="Label" parent="ShortcutsDialog/VBox" unique_id=381442137]
+layout_mode = 2
+text = "  • Left Drag: Sculpt terrain elevation
+  • Shift + Drag: Invert sculpt (Raise <-> Lower)
+  • Ctrl + Drag: Temporary Smooth mode
+  • Alt + Click (Flatten mode): Sample elevation under cursor
+  • Alt + X / Alt + Z: Lock brush to X or Z global axis (Alt + C to clear)
+  • Ramp Tool: Click Point A, Click Point B; Alt + Enter to Apply, Esc to Clear"
+
+[node name="Header4" type="Label" parent="ShortcutsDialog/VBox" unique_id=751030380]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Camera Navigation & Universal Freedom:"
+
+[node name="Label4" type="Label" parent="ShortcutsDialog/VBox" unique_id=1492550714]
+layout_mode = 2
+text = "  • RMB / MMB Freelook & Pan: Camera navigation (W, A, S, D, Q, E, Shift) is never intercepted
+  • Bare keys (W, E, R, Q, F, H, 1-7, etc.) belong 100% to Godot unless Alt (Option) is held"
+
+
+[node name="SaveMeshDialog" type="FileDialog" parent="." unique_id=1899478582]
+unique_name_in_owner = true
+title = "Save Terrain Mesh"
+size = Vector2i(900, 580)
+filters = PackedStringArray("*.tres ; Godot Text Resource", "*.res ; Godot Binary Resource")
+
+[node name="SaveGltfDialog" type="FileDialog" parent="." unique_id=1955204498]
+unique_name_in_owner = true
+title = "Export Terrain as glTF"
+size = Vector2i(900, 580)
+filters = PackedStringArray("*.glb ; Binary glTF File", "*.gltf ; Text glTF File")
+
+[node name="SaveTextureDialog" type="FileDialog" parent="." unique_id=16541774]
+unique_name_in_owner = true
+title = "Save Terrain Texture"
+size = Vector2i(900, 580)
+filters = PackedStringArray("*.png ; PNG Image")
+
+[node name="SaveDataDialog" type="FileDialog" parent="." unique_id=1146127931]
+unique_name_in_owner = true
+title = "Save Terrain Data"
+size = Vector2i(900, 580)
+filters = PackedStringArray("*.res ; Binary Resource (*.res)", "*.tres ; Text Resource (*.tres)")
+
+[node name="SlopeDialog" parent="." unique_id=566782691 instance=ExtResource("4_slope_dlg")]
+unique_name_in_owner = true
+
+[node name="DynamicsPopup" type="PopupPanel" parent="." unique_id=318005647]
+
+unique_name_in_owner = true
+size = Vector2i(250, 185)
+
+[node name="DynamicsMargin" type="MarginContainer" parent="DynamicsPopup" unique_id=1958746390]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 246.0
+offset_bottom = 190.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DynamicsVBox" type="VBoxContainer" parent="DynamicsPopup/DynamicsMargin" unique_id=442680621]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="DynamicsHeader" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox" unique_id=2038542592]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Stroke Dynamics"
+
+[node name="DynamicsHSep1" type="HSeparator" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox" unique_id=1366193294]
+layout_mode = 2
+
+[node name="SculptDynamicsBox" type="VBoxContainer" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox" unique_id=2111107874]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SculptGrid" type="GridContainer" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox" unique_id=45277744]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="LabelSpc" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox/SculptGrid" unique_id=1655286534]
+layout_mode = 2
+text = "Spacing:"
+
+[node name="SculptSpacingSpinBox" type="SpinBox" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox/SculptGrid" unique_id=437348609]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Stroke Spacing (% of brush radius)"
+min_value = 2.0
+value = 15.0
+suffix = "%"
+
+[node name="LabelJitPos" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox/SculptGrid" unique_id=406683815]
+layout_mode = 2
+text = "Pos Jitter:"
+
+[node name="SculptJitterPosSpinBox" type="SpinBox" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox/SculptGrid" unique_id=481253731]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Position Jitter (% of brush radius)"
+step = 5.0
+suffix = "%"
+
+[node name="LabelJitAng" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox/SculptGrid" unique_id=1131806960]
+layout_mode = 2
+text = "Angle Jitter:"
+
+[node name="SculptJitterAngleSpinBox" type="SpinBox" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/SculptDynamicsBox/SculptGrid" unique_id=1428208686]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Angle Jitter (0 to 360°)"
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="PaintDynamicsBox" type="VBoxContainer" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox" unique_id=1893275345]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PaintGrid" type="GridContainer" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox" unique_id=1582242135]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="LabelPSpc" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox/PaintGrid" unique_id=1569937562]
+layout_mode = 2
+text = "Spacing:"
+
+[node name="PaintSpacingSpinBox" type="SpinBox" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox/PaintGrid" unique_id=1322653029]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Stroke Spacing (% of brush radius)"
+min_value = 2.0
+value = 15.0
+suffix = "%"
+
+[node name="LabelPJitPos" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox/PaintGrid" unique_id=1657613598]
+layout_mode = 2
+text = "Pos Jitter:"
+
+[node name="PaintJitterPosSpinBox" type="SpinBox" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox/PaintGrid" unique_id=868269948]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Position Jitter (% of brush radius)"
+step = 5.0
+suffix = "%"
+
+[node name="LabelPJitAng" type="Label" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox/PaintGrid" unique_id=425335312]
+layout_mode = 2
+text = "Angle Jitter:"
+
+[node name="PaintJitterAngleSpinBox" type="SpinBox" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox/PaintDynamicsBox/PaintGrid" unique_id=1565202407]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Angle Jitter (0 to 360°)"
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="DynamicsHSep2" type="HSeparator" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox" unique_id=836941768]
+layout_mode = 2
+
+[node name="ResetDynamicsBtn" type="Button" parent="DynamicsPopup/DynamicsMargin/DynamicsVBox" unique_id=1429931075]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reset to Defaults"
+
+[node name="MaskPopup" type="PopupPanel" parent="." unique_id=848519039]
+unique_name_in_owner = true
+size = Vector2i(270, 360)
+
+[node name="MaskMargin" type="MarginContainer" parent="MaskPopup" unique_id=402066591]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 331.0
+offset_bottom = 356.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="MaskVBox" type="VBoxContainer" parent="MaskPopup/MaskMargin" unique_id=1683896935]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MaskHeader" type="Label" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=1212793467]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Alpha Stencil Mask"
+
+[node name="MaskHSep1" type="HSeparator" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=743516442]
+layout_mode = 2
+
+[node name="CurrentMaskBox" type="HBoxContainer" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=698563913]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MaskPreviewPanel" type="PanelContainer" parent="MaskPopup/MaskMargin/MaskVBox/CurrentMaskBox" unique_id=365335582]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+
+[node name="MaskPreviewRect" type="TextureRect" parent="MaskPopup/MaskMargin/MaskVBox/CurrentMaskBox/MaskPreviewPanel" unique_id=1697269387]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MaskNameLabel" type="Label" parent="MaskPopup/MaskMargin/MaskVBox/CurrentMaskBox" unique_id=386120224]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "None (No Mask)"
+clip_text = true
+
+[node name="MaskClearBtn" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/CurrentMaskBox" unique_id=1680048459]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear"
+
+[node name="MaskAngleBox" type="HBoxContainer" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=2128662424]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AngleLabel" type="Label" parent="MaskPopup/MaskMargin/MaskVBox/MaskAngleBox" unique_id=1756851808]
+layout_mode = 2
+text = "Rotation:"
+
+[node name="SculptMaskAngleSpinBox" type="SpinBox" parent="MaskPopup/MaskMargin/MaskVBox/MaskAngleBox" unique_id=624861593]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+tooltip_text = "Stencil Mask rotation angle"
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="MaskHSep2" type="HSeparator" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=2079364510]
+layout_mode = 2
+
+[node name="PresetsHeader" type="Label" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=1036430008]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.85, 1)
+text = "Presets:"
+
+[node name="PresetsScroll" type="ScrollContainer" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=1601836226]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="PresetsVBox" type="VBoxContainer" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll" unique_id=1887717366]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="MaskBtnRock" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=2046637578]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rock Cliff"
+alignment = 0
+
+[node name="MaskBtnCobble" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=173371956]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cobblestone"
+alignment = 0
+
+[node name="MaskBtnGravel" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=604419454]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dirt Gravel"
+alignment = 0
+
+[node name="MaskBtnGrass" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=1589274906]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Grass Blades"
+alignment = 0
+
+[node name="MaskBtnSand" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=1849712227]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sand Ripples"
+alignment = 0
+
+[node name="MaskBtnCracked" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=1087951143]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cracked Earth"
+alignment = 0
+
+[node name="MaskBtnSoft" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=1245016807]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Soft Radial"
+alignment = 0
+
+[node name="MaskBtnSplatter" type="Button" parent="MaskPopup/MaskMargin/MaskVBox/PresetsScroll/PresetsVBox" unique_id=1783914110]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Splatter Grunge"
+alignment = 0
+
+[node name="MaskHSep3" type="HSeparator" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=49241085]
+layout_mode = 2
+
+[node name="MaskPaletteBtn" type="Button" parent="MaskPopup/MaskMargin/MaskVBox" unique_id=119478025]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose from Palette / Import..."
+
+[node name="PatternFlyoutPopup" type="PopupPanel" parent="." unique_id=778899001]
+unique_name_in_owner = true
+size = Vector2i(320, 360)
+
+[node name="PatternMargin" type="MarginContainer" parent="PatternFlyoutPopup" unique_id=778899002]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 316.0
+offset_bottom = 356.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PatternVBox" type="VBoxContainer" parent="PatternFlyoutPopup/PatternMargin" unique_id=778899003]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PatternFlyoutHeader" type="Label" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899004]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Texture Pattern Stamps"
+
+[node name="PatternFlyoutHSep1" type="HSeparator" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899005]
+layout_mode = 2
+
+[node name="CurrentPatternBox" type="HBoxContainer" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899006]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FlyoutPatternPreviewPanel" type="PanelContainer" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/CurrentPatternBox" unique_id=778899007]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+
+[node name="FlyoutPatternPreviewRect" type="TextureRect" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/CurrentPatternBox/FlyoutPatternPreviewPanel" unique_id=778899008]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FlyoutPatternNameLabel" type="Label" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/CurrentPatternBox" unique_id=778899009]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "None (No Pattern)"
+clip_text = true
+
+[node name="FlyoutPatternClearBtn" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/CurrentPatternBox" unique_id=778899010]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear"
+
+[node name="FlyoutTilingBox" type="HBoxContainer" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899011]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TilingLabel" type="Label" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutTilingBox" unique_id=778899012]
+layout_mode = 2
+text = "Tiling:"
+
+[node name="FlyoutTilingSpin" type="SpinBox" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutTilingBox" unique_id=778899013]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 64.0
+step = 0.5
+value = 4.0
+
+[node name="AngleLabel" type="Label" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutTilingBox" unique_id=778899014]
+layout_mode = 2
+text = "Angle:"
+
+[node name="FlyoutAngleSpin" type="SpinBox" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutTilingBox" unique_id=778899015]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="PatternFlyoutHSep2" type="HSeparator" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899016]
+layout_mode = 2
+
+[node name="PresetsHeader" type="Label" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899017]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "QUICK STAMPS"
+
+[node name="FlyoutPatternScroll" type="ScrollContainer" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899018]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FlyoutPatternGrid" type="GridContainer" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll" unique_id=778899019]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="PatBtnRock" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899020]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rock Cliff"
+alignment = 0
+
+[node name="PatBtnCobble" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899021]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cobblestone"
+alignment = 0
+
+[node name="PatBtnGravel" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899022]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dirt Gravel"
+alignment = 0
+
+[node name="PatBtnGrass" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899023]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Grass Blades"
+alignment = 0
+
+[node name="PatBtnSand" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899024]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sand Ripples"
+alignment = 0
+
+[node name="PatBtnCracked" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899025]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cracked Earth"
+alignment = 0
+
+[node name="PatBtnSoft" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899026]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Soft Radial"
+alignment = 0
+
+[node name="PatBtnSplatter" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox/FlyoutPatternScroll/FlyoutPatternGrid" unique_id=778899027]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Splatter Grunge"
+alignment = 0
+
+[node name="PatternFlyoutHSep3" type="HSeparator" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899028]
+layout_mode = 2
+
+[node name="FlyoutOpenPaletteBtn" type="Button" parent="PatternFlyoutPopup/PatternMargin/PatternVBox" unique_id=778899029]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Open Full Palette in Dock..."
+
+[node name="BrushFlyoutPopup" type="PopupPanel" parent="." unique_id=778899040]
+unique_name_in_owner = true
+size = Vector2i(320, 370)
+
+[node name="BrushMargin" type="MarginContainer" parent="BrushFlyoutPopup" unique_id=778899041]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 316.0
+offset_bottom = 366.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BrushVBox" type="VBoxContainer" parent="BrushFlyoutPopup/BrushMargin" unique_id=778899042]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BrushFlyoutHeader" type="Label" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899043]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Brush Shape (Footprint)"
+
+[node name="BrushFlyoutHSep1" type="HSeparator" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899044]
+layout_mode = 2
+
+[node name="CurrentBrushBox" type="HBoxContainer" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899045]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FlyoutBrushPreviewPanel" type="PanelContainer" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/CurrentBrushBox" unique_id=778899046]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+
+[node name="FlyoutBrushPreviewRect" type="TextureRect" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/CurrentBrushBox/FlyoutBrushPreviewPanel" unique_id=778899047]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FlyoutBrushNameLabel" type="Label" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/CurrentBrushBox" unique_id=778899048]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Soft Circle"
+clip_text = true
+
+[node name="FlyoutBrushAngleBox" type="HBoxContainer" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899049]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BrushAngleLabel" type="Label" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/FlyoutBrushAngleBox" unique_id=778899050]
+layout_mode = 2
+text = "Angle:"
+
+[node name="FlyoutBrushAngleSpin" type="SpinBox" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/FlyoutBrushAngleBox" unique_id=778899051]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="BrushPresetsLabel" type="Label" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899052]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.85, 1)
+text = "Brush Shapes:"
+
+[node name="BrushPresetsScroll" type="ScrollContainer" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899053]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="BrushPresetsVBox" type="VBoxContainer" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/BrushPresetsScroll" unique_id=778899054]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="BrushBtnCircle" type="Button" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/BrushPresetsScroll/BrushPresetsVBox" unique_id=778899055]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Soft Circle"
+icon = ExtResource("43_brush_circle")
+alignment = 0
+
+[node name="BrushBtnSquare" type="Button" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/BrushPresetsScroll/BrushPresetsVBox" unique_id=778899056]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Square"
+icon = ExtResource("44_brush_square")
+alignment = 0
+
+[node name="BrushBtnPatch" type="Button" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/BrushPresetsScroll/BrushPresetsVBox" unique_id=778899057]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Patch / Grunge"
+icon = ExtResource("45_brush_patch")
+alignment = 0
+
+[node name="BrushBtnDots" type="Button" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/BrushPresetsScroll/BrushPresetsVBox" unique_id=778899058]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Small Dots / Splatter"
+icon = ExtResource("46_brush_dots")
+alignment = 0
+
+[node name="BrushBtnCross" type="Button" parent="BrushFlyoutPopup/BrushMargin/BrushVBox/BrushPresetsScroll/BrushPresetsVBox" unique_id=778899059]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Star / Cross"
+icon = ExtResource("47_brush_cross")
+alignment = 0
+
+[node name="BrushFlyoutHSep2" type="HSeparator" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899060]
+layout_mode = 2
+
+[node name="FlyoutOpenPaletteBrushBtn" type="Button" parent="BrushFlyoutPopup/BrushMargin/BrushVBox" unique_id=778899061]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Manage in Terrain Palette..."
+
+[node name="SlopeLimitPopup" type="PopupPanel" parent="." unique_id=778899070]
+unique_name_in_owner = true
+size = Vector2i(280, 240)
+
+[node name="SlopeMargin" type="MarginContainer" parent="SlopeLimitPopup" unique_id=778899071]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 276.0
+offset_bottom = 236.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SlopeVBox" type="VBoxContainer" parent="SlopeLimitPopup/SlopeMargin" unique_id=778899072]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SlopeHeader" type="Label" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899073]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+text = "Slope Angle Limits"
+
+[node name="SlopeDesc" type="Label" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899074]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 12
+text = "Constrain strokes to surface slope range"
+
+[node name="SlopeHSep1" type="HSeparator" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899075]
+layout_mode = 2
+
+[node name="MinSlopeBox" type="HBoxContainer" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899076]
+layout_mode = 2
+
+[node name="MinSlopeLabel" type="Label" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/MinSlopeBox" unique_id=778899077]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Min Slope:"
+
+[node name="SlopeMinSpin" type="SpinBox" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/MinSlopeBox" unique_id=778899078]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+max_value = 90.0
+step = 1.0
+suffix = "°"
+
+[node name="MaxSlopeBox" type="HBoxContainer" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899079]
+layout_mode = 2
+
+[node name="MaxSlopeLabel" type="Label" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/MaxSlopeBox" unique_id=778899080]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Max Slope:"
+
+[node name="SlopeMaxSpin" type="SpinBox" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/MaxSlopeBox" unique_id=778899081]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+max_value = 90.0
+step = 1.0
+value = 90.0
+suffix = "°"
+
+[node name="SlopePresetsBox" type="HBoxContainer" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899082]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SlopePresetAllBtn" type="Button" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/SlopePresetsBox" unique_id=778899083]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "All"
+
+[node name="SlopePresetFlatBtn" type="Button" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/SlopePresetsBox" unique_id=778899084]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Flat"
+
+[node name="SlopePresetCliffsBtn" type="Button" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox/SlopePresetsBox" unique_id=778899085]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cliffs"
+
+[node name="SlopeResetBtn" type="Button" parent="SlopeLimitPopup/SlopeMargin/SlopeVBox" unique_id=778899086]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reset Limits (0° - 90°)"
+
+[node name="CustomBrushFileDialog" type="FileDialog" parent="." unique_id=778899090]
+unique_name_in_owner = true
+title = "Import Custom Brush Image"
+size = Vector2i(900, 580)
+filters = PackedStringArray("*.png ; PNG Image (*.png)", "*.jpg, *.jpeg ; JPEG Image", "*.webp ; WebP Image")

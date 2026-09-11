@@ -1,0 +1,786 @@
+[gd_scene format=3 uid="uid://cassetdock001"]
+
+[ext_resource type="Script" path="res://addons/simple_terrain/ui/terrain_asset_dock.gd" id="1_dock"]
+[ext_resource type="Texture2D" uid="uid://cpwn78y8jvbrl" path="res://addons/simple_terrain/icons/mode_foliage.svg" id="2_foliage_icon"]
+[ext_resource type="Texture2D" uid="uid://dyhk1pvw3but" path="res://addons/simple_terrain/icons/mode_paint.svg" id="3_paint_icon"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/refresh.svg" id="4_refresh_icon"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/close.svg" id="5_close_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dock"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.11, 0.12, 0.16, 0.98)
+border_width_top = 1
+border_color = Color(0.24, 0.28, 0.38, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_preview"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.08, 0.09, 0.12, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.32, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="TerrainAssetDock" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 370)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dock")
+script = ExtResource("1_dock")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TopBar" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TabFoliageBtn" type="Button" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+button_pressed = true
+text = " Foliage & Models"
+icon = ExtResource("2_foliage_icon")
+
+[node name="TabTexturesBtn" type="Button" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+text = " Textures & Patterns"
+icon = ExtResource("3_paint_icon")
+
+[node name="VSep1" type="VSeparator" parent="VBox/TopBar"]
+layout_mode = 2
+
+[node name="SearchEdit" type="LineEdit" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Search presets or patterns..."
+clear_button_enabled = true
+
+[node name="CategoryOption" type="OptionButton" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(210, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="Spacer" type="Control" parent="VBox/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ImportBtn" type="Button" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "+ Import 3D Model..."
+
+[node name="RefreshBtn" type="Button" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+tooltip_text = "Refresh preset and pattern lists from disk"
+icon = ExtResource("4_refresh_icon")
+
+[node name="CloseBtn" type="Button" parent="VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+tooltip_text = "Close Terrain Palette"
+icon = ExtResource("5_close_icon")
+icon_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+
+[node name="ContentBox" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FoliageView" type="HBoxContainer" parent="VBox/ContentBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ActiveLayersBox" type="VBoxContainer" parent="VBox/ContentBox/FoliageView"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LayersHeader" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/ActiveLayersBox"]
+layout_mode = 2
+
+[node name="LayersTitle" type="Label" parent="VBox/ContentBox/FoliageView/ActiveLayersBox/LayersHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 22
+text = "Active Terrain Layers"
+text_overrun_behavior = 3
+
+[node name="LayersCountLabel" type="Label" parent="VBox/ContentBox/FoliageView/ActiveLayersBox/LayersHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.7, 0.95, 1)
+theme_override_font_sizes/font_size = 22
+text = "(0)"
+
+[node name="LayersScroll" type="ScrollContainer" parent="VBox/ContentBox/FoliageView/ActiveLayersBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ActiveLayersList" type="VBoxContainer" parent="VBox/ContentBox/FoliageView/ActiveLayersBox/LayersScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="AddLayerBtn" type="Button" parent="VBox/ContentBox/FoliageView/ActiveLayersBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "+ Add Selected to Terrain"
+
+[node name="VSepFoliage1" type="VSeparator" parent="VBox/ContentBox/FoliageView"]
+layout_mode = 2
+
+[node name="FoliageGalleryBox" type="VBoxContainer" parent="VBox/ContentBox/FoliageView"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="GalleryTitle" type="Label" parent="VBox/ContentBox/FoliageView/FoliageGalleryBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 22
+text = "Foliage Library & Presets (Click to preview, Double-click to add to terrain)"
+text_overrun_behavior = 3
+
+[node name="FoliageScroll" type="ScrollContainer" parent="VBox/ContentBox/FoliageView/FoliageGalleryBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FoliageMargin" type="MarginContainer" parent="VBox/ContentBox/FoliageView/FoliageGalleryBox/FoliageScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="FoliageGrid" type="HFlowContainer" parent="VBox/ContentBox/FoliageView/FoliageGalleryBox/FoliageScroll/FoliageMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="VSepFoliage2" type="VSeparator" parent="VBox/ContentBox/FoliageView"]
+layout_mode = 2
+
+[node name="FoliagePropsBox" type="VBoxContainer" parent="VBox/ContentBox/FoliageView"]
+custom_minimum_size = Vector2(390, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PropsTitle" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 22
+text = "Layer Brush & Placement Settings"
+text_overrun_behavior = 3
+
+[node name="PropsScroll" type="ScrollContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="LayerPropsBox" type="VBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="DensityToggleBtn" type="Button" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "▾ SCATTER DENSITY"
+flat = true
+alignment = 0
+
+[node name="DensityContainer" type="VBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="DensityBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer/DensityBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Density:"
+
+[node name="DockDensitySpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer/DensityBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+min_value = 1.0
+max_value = 50.0
+step = 1.0
+value = 12.0
+
+[node name="SpacingBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer/SpacingBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Min Spacing:"
+
+[node name="DockSpacingSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer/SpacingBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+min_value = 0.0
+max_value = 50.0
+step = 0.05
+value = 0.25
+suffix = "m"
+
+[node name="ShadowBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer/ShadowBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Shadows:"
+
+[node name="DockShadowOption" type="OptionButton" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/DensityContainer/ShadowBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+
+[node name="HSepSec1" type="HSeparator" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+layout_mode = 2
+
+[node name="TransformToggleBtn" type="Button" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "▾ TRANSFORM VARIATION"
+flat = true
+alignment = 0
+
+[node name="TransformContainer" type="VBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ScaleBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/ScaleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Scale Min/Max:"
+
+[node name="DockScaleMinSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/ScaleBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(95, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+min_value = 0.1
+max_value = 5.0
+step = 0.05
+value = 0.8
+
+[node name="DockScaleMaxSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/ScaleBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(95, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+min_value = 0.1
+max_value = 5.0
+step = 0.05
+value = 1.3
+
+[node name="TiltBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/TiltBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Random Tilt:"
+
+[node name="DockTiltSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/TiltBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+max_value = 45.0
+step = 1.0
+value = 5.0
+suffix = "°"
+
+[node name="HeightBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/HeightBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Height Offset:"
+
+[node name="DockHeightSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/TransformContainer/HeightBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+min_value = -2.0
+max_value = 2.0
+step = 0.01
+value = -0.05
+suffix = "m"
+
+[node name="HSepSec2" type="HSeparator" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+layout_mode = 2
+
+[node name="SurfaceToggleBtn" type="Button" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "▾ SURFACE CONSTRAINTS"
+flat = true
+alignment = 0
+
+[node name="SurfaceContainer" type="VBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="AlignBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/SurfaceContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/SurfaceContainer/AlignBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Align to Normal:"
+
+[node name="DockAlignSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/SurfaceContainer/AlignBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SlopeBox" type="HBoxContainer" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/SurfaceContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/SurfaceContainer/SlopeBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 22
+text = "Max Slope:"
+
+[node name="DockSlopeSpin" type="SpinBox" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox/SurfaceContainer/SlopeBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+min_value = 5.0
+max_value = 85.0
+step = 1.0
+value = 40.0
+suffix = "°"
+
+[node name="DockMeshLabel" type="Label" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.72, 0.85, 0.85)
+theme_override_font_sizes/font_size = 22
+text = "Model: QuadMesh"
+text_overrun_behavior = 3
+
+[node name="HSepProps" type="HSeparator" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+layout_mode = 2
+
+[node name="DockSavePresetBtn" type="Button" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Save Layer as Preset..."
+
+[node name="DockClearInstBtn" type="Button" parent="VBox/ContentBox/FoliageView/FoliagePropsBox/PropsScroll/LayerPropsBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Clear Instances in Layer"
+
+
+[node name="TextureView" type="HBoxContainer" parent="VBox/ContentBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TexturePaletteBox" type="VBoxContainer" parent="VBox/ContentBox/TextureView"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="BrushHeaderBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox"]
+layout_mode = 2
+
+[node name="BrushTitle" type="Label" parent="VBox/ContentBox/TextureView/TexturePaletteBox/BrushHeaderBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 20
+text = "Brush Shapes & Footprints"
+text_overrun_behavior = 3
+
+[node name="DockImportBrushBtn" type="Button" parent="VBox/ContentBox/TextureView/TexturePaletteBox/BrushHeaderBox" unique_id=778899060]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "+ Import PNG..."
+
+[node name="BrushScroll" type="ScrollContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="BrushMargin" type="MarginContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox/BrushScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="BrushGrid" type="HFlowContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox/BrushScroll/BrushMargin" unique_id=778899061]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="HSepBrushesPatterns" type="HSeparator" parent="VBox/ContentBox/TextureView/TexturePaletteBox"]
+layout_mode = 2
+
+[node name="PaletteTitle" type="Label" parent="VBox/ContentBox/TextureView/TexturePaletteBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 20
+text = "Texture & Stamp Patterns"
+text_overrun_behavior = 3
+
+[node name="TextureScroll" type="ScrollContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TextureMargin" type="MarginContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox/TextureScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureGrid" type="HFlowContainer" parent="VBox/ContentBox/TextureView/TexturePaletteBox/TextureScroll/TextureMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="VSepTex1" type="VSeparator" parent="VBox/ContentBox/TextureView"]
+layout_mode = 2
+
+[node name="TexturePropsBox" type="VBoxContainer" parent="VBox/ContentBox/TextureView"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TexPropsTitle" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 20
+text = "Active Pattern Settings"
+text_overrun_behavior = 3
+
+[node name="PreviewCenter" type="CenterContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="PreviewPanel" type="PanelContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox/PreviewCenter"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_preview")
+
+[node name="DockPatternPreviewRect" type="TextureRect" parent="VBox/ContentBox/TextureView/TexturePropsBox/PreviewCenter/PreviewPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DockPatternNameLabel" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.98, 1)
+theme_override_font_sizes/font_size = 18
+text = "Rock Cliff"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="TilingBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox/TilingBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 18
+text = "Repeat Tiling:"
+
+[node name="DockTilingSpin" type="SpinBox" parent="VBox/ContentBox/TextureView/TexturePropsBox/TilingBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+min_value = 1.0
+max_value = 64.0
+step = 1.0
+value = 8.0
+
+[node name="AngleBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox/AngleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 18
+text = "Stamp Angle:"
+
+[node name="DockAngleSpin" type="SpinBox" parent="VBox/ContentBox/TextureView/TexturePropsBox/AngleBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="HSepProps1" type="HSeparator" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="SlopeTitle" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 20
+text = "Slope Angle Limits"
+text_overrun_behavior = 3
+
+[node name="SlopeMinBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopeMinBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 18
+text = "Min Slope Angle:"
+
+[node name="DockSlopeMinSpin" type="SpinBox" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopeMinBox" unique_id=778899062]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+max_value = 90.0
+step = 1.0
+value = 0.0
+suffix = "°"
+
+[node name="SlopeMaxBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopeMaxBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 18
+text = "Max Slope Angle:"
+
+[node name="DockSlopeMaxSpin" type="SpinBox" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopeMaxBox" unique_id=778899063]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+max_value = 90.0
+step = 1.0
+value = 90.0
+suffix = "°"
+
+[node name="SlopePresetsBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="DockSlopePresetAll" type="Button" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopePresetsBox" unique_id=778899064]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "All (0-90°)"
+
+[node name="DockSlopePresetFlat" type="Button" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopePresetsBox" unique_id=778899065]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Flat (<30°)"
+
+[node name="DockSlopePresetCliffs" type="Button" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopePresetsBox" unique_id=778899066]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cliffs (>35°)"
+
+[node name="DockSlopeResetBtn" type="Button" parent="VBox/ContentBox/TextureView/TexturePropsBox/SlopePresetsBox" unique_id=778899067]
+unique_name_in_owner = true
+layout_mode = 2
+text = "↺"
+
+[node name="HSepProps2" type="HSeparator" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="BrushFootprintTitle" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.96, 1)
+theme_override_font_sizes/font_size = 20
+text = "Active Brush Footprint"
+text_overrun_behavior = 3
+
+[node name="BrushPreviewCenter" type="CenterContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="BrushPreviewPanel" type="PanelContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox/BrushPreviewCenter"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_preview")
+
+[node name="DockBrushPreviewRect" type="TextureRect" parent="VBox/ContentBox/TextureView/TexturePropsBox/BrushPreviewCenter/BrushPreviewPanel" unique_id=778899068]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DockBrushNameLabel" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox" unique_id=778899069]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.98, 1)
+theme_override_font_sizes/font_size = 18
+text = "Circle Gradient"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="BrushAngleBox" type="HBoxContainer" parent="VBox/ContentBox/TextureView/TexturePropsBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ContentBox/TextureView/TexturePropsBox/BrushAngleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.88, 0.94, 1)
+theme_override_font_sizes/font_size = 18
+text = "Brush Angle:"
+
+[node name="DockBrushAngleSpin" type="SpinBox" parent="VBox/ContentBox/TextureView/TexturePropsBox/BrushAngleBox" unique_id=778899070]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+max_value = 360.0
+step = 15.0
+suffix = "°"
+
+[node name="ModelFileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Import 3D Model as Foliage Layer"
+size = Vector2i(1050, 700)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.glb, *.gltf, *.tscn, *.obj, *.res, *.tres ; 3D Model / Preset Files")
+
+[node name="TextureFileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Import Texture / Brush Pattern"
+size = Vector2i(1050, 700)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.png, *.jpg, *.jpeg, *.webp ; Image Files")
+
+[node name="BrushFileDialog" type="FileDialog" parent="." unique_id=778899071]
+unique_name_in_owner = true
+title = "Import Custom PNG Brush Shape"
+size = Vector2i(1050, 700)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.png ; PNG Grayscale/Alpha Image")
+
+[node name="SavePresetFileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Save Foliage Layer Preset"
+size = Vector2i(980, 650)
+ok_button_text = "Save"
+filters = PackedStringArray("*.tres ; Foliage Preset Resource")

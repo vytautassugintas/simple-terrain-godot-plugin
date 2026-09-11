@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://b8d5x8hud001"]
+
+[ext_resource type="Script" path="res://addons/simple_terrain/ui/terrain_info_hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://dp64j5vhud01" path="res://addons/simple_terrain/icons/hud_info.svg" id="2_icon"]
+[ext_resource type="Texture2D" path="res://addons/simple_terrain/icons/close.svg" id="3_close"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 14.0
+bg_color = Color(0.10, 0.11, 0.15, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32, 0.38, 0.52, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(0, 3)
+
+[node name="TerrainInfoHud" type="PanelContainer"]
+custom_minimum_size = Vector2(320, 0)
+offset_right = 320.0
+offset_bottom = 190.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hud")
+script = ExtResource("1_hud")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleBar" type="HBoxContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="VBox/TitleBar"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="VBox/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.88, 0.93, 1.0, 1.0)
+text = "Terrain Live Info"
+
+[node name="ShortcutHint" type="Label" parent="VBox/TitleBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.55, 0.62, 0.74, 1.0)
+text = "(H)"
+
+[node name="CloseBtn" type="Button" parent="VBox/TitleBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Close Info HUD (H)"
+focus_mode = 0
+icon = ExtResource("3_close")
+icon_alignment = 1
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="CoordLbl" type="Label" parent="VBox/Grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1.0)
+text = "Position:"
+
+[node name="CoordVal" type="Label" parent="VBox/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.92, 0.95, 0.98, 1.0)
+text = "X: +0.0m, Z: +0.0m"
+
+[node name="HeightLbl" type="Label" parent="VBox/Grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1.0)
+text = "Elevation:"
+
+[node name="HeightVal" type="Label" parent="VBox/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.35, 0.95, 0.55, 1.0)
+text = "+0.00 m"
+
+[node name="SlopeLbl" type="Label" parent="VBox/Grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1.0)
+text = "Slope Angle:"
+
+[node name="SlopeVal" type="Label" parent="VBox/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(1.0, 0.78, 0.35, 1.0)
+text = "0.0°"
+
+[node name="ToolLbl" type="Label" parent="VBox/Grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1.0)
+text = "Active Tool:"
+
+[node name="ToolVal" type="Label" parent="VBox/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.88, 0.92, 0.98, 1.0)
+text = "View"
+
+[node name="AxisLockLbl" type="Label" parent="VBox/Grid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.65, 0.72, 0.82, 1.0)
+text = "Axis Lock:"
+
+[node name="AxisLockVal" type="Label" parent="VBox/Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.8, 0.84, 0.92, 1.0)
+text = "None (X/Z)"

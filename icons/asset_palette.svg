@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Palette Board -->
+  <path d="M8 1C4.13 1 1 4.13 1 8c0 3.87 3.13 7 7 7 1.1 0 2-.9 2-2 0-.48-.17-.93-.46-1.28-.28-.35-.46-.8-.46-1.28 0-1.1.9-2 2-2h1.46c2.46 0 4.46-2 4.46-4.46C17 4.02 12.98 1 8 1z" fill="#384358"/>
+  <!-- Paint wells -->
+  <circle cx="4.5" cy="5.5" r="1.2" fill="#e05656"/>
+  <circle cx="8" cy="3.5" r="1.2" fill="#f5a623"/>
+  <circle cx="11.5" cy="5.5" r="1.2" fill="#50e3c2"/>
+  <!-- Leaf element for foliage -->
+  <path d="M5 11c0-2 2-3.5 3.5-3.5 0 2-1.5 3.5-3.5 3.5z" fill="#7ed321"/>
+  <path d="M5 11c1-1 2-2 3.5-3.5" stroke="#417505" stroke-width="0.75" stroke-linecap="round"/>
+</svg>

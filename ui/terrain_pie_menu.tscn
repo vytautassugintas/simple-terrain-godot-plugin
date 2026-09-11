@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dmvpie001menu"]
+
+[ext_resource type="Script" path="res://addons/simple_terrain/ui/terrain_pie_menu.gd" id="1_piemenu"]
+
+[node name="TerrainPieMenu" type="Control"]
+custom_minimum_size = Vector2(360, 360)
+offset_right = 360.0
+offset_bottom = 360.0
+script = ExtResource("1_piemenu")
